@@ -272,15 +272,22 @@ nav {
     gap: 2rem;
 }
 
-@media (min-width: 768px) {
-    .container { max-width: 1440px; }
-    .parent-of-half-page img { max-width: 100%; }
+.three-benefits img{
+    max-height: 150px;
+    width: auto;
+}
+
+@media(min-width: 600px){
     .three-benefits {
         display: flex;
         gap: 12%;
         justify-content: space-between;
     }
+}
 
+@media (min-width: 768px) {
+    .container { max-width: 1440px; }
+    .parent-of-half-page img { max-width: 100%; }
     .reverse-parent { flex-direction: row-reverse; }
 
     .parent-of-half-page {
@@ -404,6 +411,33 @@ nav {
         grid-template-rows: repeat(1fr);
     }
 }
+
+/*-----------------Logo Section ------------------------*/
+
+.logo-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    padding: 2% 0;
+    justify-content: center;
+}
+
+.logo-wrapper img {
+    width: 20%;
+    height: auto;
+}
+
+@media (min-width: 650px) {
+    .logo-section img {
+        width: 12%;
+
+    }
+}
+
+/*-----------------End of Logo Section ---------------------*/
 
 /*-----------------End of Why Us Section ---------------------*/
 
