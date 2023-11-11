@@ -439,6 +439,22 @@ nav {
 
 /*-----------------End of Logo Section ---------------------*/
 
+.dark-bg{
+    background-color: #171717;
+}
+
+.cell img{
+    border: 2px solid white;
+}
+
+.dark-bg h2{
+    color: white;
+}
+
+.latest-project-head img{
+    max-width: 300px;
+}
+
 /*-----------------End of Why Us Section ---------------------*/
 
 /* Contact*/
