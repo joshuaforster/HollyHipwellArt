@@ -9,6 +9,7 @@
 
 img{
     display: inline-block;
+    width: 100%;
 }
 
 body {
@@ -35,7 +36,7 @@ header{
 
 
 h1, h2, h3, h4, li {
-    color: #292929;
+    color: #000000;
     line-height: 150%;
     font-family: hello;
     
@@ -349,37 +350,9 @@ nav {
     width: 100%;
 }
 /*--------------------- Hero Section ------------------------*/
-.venetian-bg {
-    background: black url(Images/venetianbg.png);
-    background-size: cover;
-   
+#hero-image img{
+    height: 50%;
 }
-
-
-.venetian-bg img{
-    border: #E0C18E 6px solid;
-}
-
-.dark-bg img{
-    border: black 6px solid;
-}
-.map img{
-    border: black 6px solid;
-}
-.offer-cover{
-    background-color: #000;
-    background-image: url(Images/offcercover.png);
-    background-size:cover ;
-}
-.dark-bg{
-    background-image: url(Images/darkbg.png);
-    background-size:cover ;
-}
-
-.venetian-bg h1, .venetian-bg p,.dark-bg h1, .dark-bg p, .dark-bg h2
- { color: white; }
-
-
 @media (min-width: 600px) {
     .hero-title, .hero-image, .hero {
         justify-content: space-between;
