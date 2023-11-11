@@ -1,268 +1,221 @@
-/* ============================================ */
-/*          Body Section                        */
-/* ============================================ */
- *, *::before, *::after{
+/* ----------------- Universal Styles ----------------------*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
- }
-
- @font-face {
-    font-family: libre-bold ;
-    src: url(font/LibreBaskerville-Bold.ttf);
- }
-
- @font-face {
-    font-family: libre;
-    src: url(font/LibreBaskerville-Regular.ttf);
- }
-
-
-* {
-    margin:0;
-    padding:0;
-    line-height: 1.5;
-    width: auto;}
-
-h2{
-    font-family: libre;
-    color: #292929;
 }
 
-p{
-    color: #292929;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+img{
+    display: inline-block;
 }
 
-q{
-    color: #292929;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-li{font-family: Arial, Helvetica, sans-serif;}
-
-    
-/* ============================================ */
-
-
-
-
-
-
-
-/* ============================================ */
-/*       Contact Header Section                 */
-/* ============================================ */
-.toplink{
-    color: white;
-    text-decoration: none;
-    
-}
-
-#contactHeader{
-background-color: #292929 ;
-justify-content: center;
-display: flex;
-align-items: center;
-}
-
-#contactHeaderContainer{
-    padding-left: 100px;
-    padding-right: 100px;
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 60px;    
-    width: 1440px
-}
-  
-.toplink{
-    color: white;
-    text-decoration: none;
-    
-}
-#socialLinks{
-    display: flex;
-    column-gap: 40px;
-    align-items: center;
-}
-
-
-
-.Headlinkinner{
-    display: flex;
-    column-gap: 25px;
-}
-
-
-
-#fb{
-    height: 16px;
+body {
+    overflow-x: hidden;
    
 }
-#insta{
-    height: 15px;
-    width: auto;
-    
-}
-#email{
-    height: 15px;
-    width: auto;
-}
-
-#darklogo{
-    height: 25px;
-    width: auto;
-}
-
-/* Large Tablet */
-
-@media(max-width:1024px )
-
-{
-#contactHeaderContainer{
-    padding-left: 50px;
-    padding-right: 50px;  
-}
-
-}
-
-/* Standard Tablet */
-@media(max-width:834px ){
-
-}
-
-
-    
-
-
-
-/* Most phones */
-@media(max-width:414px){
-
-#contactHeaderContainer{
-padding-left: 20px;
-padding-right: 20px;
-}
-}
-
-/* Small phones */
-@media(max-width:320px)
-{ 
-
-}
-
-/* ============================================ */
-
-
-
-
-
-
-
-/* ============================================ */
-/*          Header Section                      */
-/* ============================================ */
 
 header{
-    background-color: #ffffff;
-    justify-content: center;
+    background-color: #F7F4F0;
+}
+
+
+
+
+@font-face {
+    font-family: hello;
+    src: url(Fonts/optima-cufonfonts/OPTIMA.TTF);
+}
+
+@font-face {
+    font-family: avenir;
+    src: url(Fonts/avenir/AvenirNextLTPro-Regular.otf);
+}
+
+
+h1, h2, h3, h4, li {
+    color: #0E2941;
+    line-height: 150%;
+    font-family: hello;
+    
+}
+
+.dark-bg h3{
+    color: #E0C18E;
+}
+
+.white-line {
+    height: 2px; /* Line thickness */
+    background-color: white; /* Line color */
+    
+  }
+
+p {
+    line-height: 150%;
+    color: #1B1B1B;
+    font-size: 18px;
+    font-family: avenir;
+}
+
+
+
+h1, h2 { 
+    font-size: 2rem;
+ }
+
+
+@media (min-width:650px){
+    h2 { font-size: 3rem; }
+}
+
+@media (min-width:1000px){
+h1 { font-size: 2.875rem;}
+}
+
+
+a {
+    line-height: 150%;
+    color: #1B1B1B;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+li a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ol {
+    list-style-type: none;
+}
+
+.padding {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.paddinghalf{
+    padding-top: 1%;
+    padding-bottom: 1%; 
+}
+
+.paddingtop {
+    padding-top: 5%;
+}
+
+.paddingbottom {
+    padding-bottom: 5%;
+}
+
+@media(max-width: 650px){
+    .paddingmob {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    
+    .paddingtopmob {
+        padding-top: 10%;
+    }
+    
+    .paddingbottommob {
+        padding-bottom: 10%;
+    }
+}
+
+header img{max-width: 200px;}
+footer img{max-width: 200px;}
+
+/* Background */
+
+
+/* Background */
+
+
+/* Navbar start */
+nav {
     display: flex;
-    box-shadow: 0px 5px 5px rgba(0,0,0,.10) 
+    justify-content: space-between;
 }
 
-li{
-    list-style: none;
-}
-
-a{color:#292929;
-text-decoration: none;}
-
-.logo{
-    padding-top: 20px;
-}
-
-.navbar{
-    width: 1440px;
+.navbar {
     min-height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
-    padding-left: 100px;
-    padding-right: 100px;
-    
+    position: relative;
+    z-index: 10000;
 }
 
-.navbar img{
+.navbar img {
     width: 150px;
-    height: auto;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: 3rem;
+    z-index: 10000;
 }
 
-.nav-branding{
+.nav-menu.active {
+    left: 0;
+    z-index: 10000;
+}
+
+
+.nav-branding {
     font-size: 2rem;
 }
 
-.nav-link{
+.nav-link {
     transition: 0.7s ease;
-}
-
-.nav-link:hover{
-    color:dodgerblue;
-}
-
-.hamburger{
-    display: none;
     cursor: pointer;
-
 }
 
+.nav-link:hover {
+     color: #E0C18E;
+}
 
+.hamburger {
+    display: none;
+}
 
-.bar{
+.bar {
     display: block;
     width: 25px;
     height: 3px;
     margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
+    background-color: #1B1B1B;
     transition: all 0.3s ease-in-out;
-    background-color: rgb(0, 0, 0);
 }
-/* ================Header large tablet================ */
 
-@media(max-width:1024px ) {
-    .hamburger{
+/* Header tablet */
+@media (max-width: 1025px) {
+    .hamburger {
         display: block;
-        
-    }
-    .hamburger.active .bar:nth-child(2){
+      }
+    
+      .hamburger.active .bar:nth-child(2) {
         opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(1){
+      }
+    
+      .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(3){
+      }
+    
+      .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
+      }  
 
- 
-
-    .nav-menu{
+    .nav-menu {
         position: fixed;
         left: -100%;
-        top: 130px;
-        gap: 0;
+        top: 75px;
         flex-direction: column;
         background-color: #ffffff;
         width: 100%;
@@ -271,1542 +224,328 @@ text-decoration: none;}
         z-index: 1000;
     }
 
-    .nav-item{
-        margin: 16px 0;
-    }
-
-    .nav-menu.active{
-        left:0;
-        background-color: #ffffff;
-    }
-
-    .navbar{
-        padding-left: 50px;
-        padding-right: 50px;  
-    }
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px )
-
-{ 
-    
-
+  
 }
 
 /* Most phones */
-@media(max-width:415px)
-{ .nav-menu{
-top: 150px;
+@media (max-width: 1025px) {
+    .nav-menu {
+        top: 80px;
+    }
 }
 
-.navbar{
-    padding-left: 20px;
-    padding-right: 20px;  
-}
-
-}
-
-/* Small phones */
-@media(max-width:320px)
-
-{ 
-
-}
-
-/* ============================================ */
+/* Navbar end */
 
 
 
+/* ------------------- Button Styles ----------------------*/
+.buttons-div { display: flex; gap: 1rem; }
 
-
-/* ============================================ */
-/*          Hero Section                        */
-/* ============================================ */
-
-.hero h2{
-    font-size: 55px;
-    font-family: libre;
-    padding-bottom: 3%;
-}
-
-.hero p{
-    font-size: 20px;
-    font-weight: 100;
-}
-
-.hero{
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-.herocontainer{
-    width: 1440px;
-    padding-top: 1%;
-    padding-bottom: 2%;
-    align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-}
-
-#herobutton{
-    padding-top: 3%;
-}
-
-.herocontainer img{
-    max-height: 650px;
-    z-index: -1;
-}
-
-.heroleft{
-width: 60%; 
-}
-
-
-
-.heroright{
-width: 40%;
-display: flex;
-justify-content: center;
-}
-
-.herobutton{
-    margin-top: 40px;
-}
-
-.herobutton a{
-   color: #ffffff;
-   display: block;
-}
-
-
-
-
-
-
-
-
-
-.button{   
-    color: rgb(255, 255, 255);
-    background-color: #292929;
+.button{
+    background-color: white;
+    border: #E0C18E 3px solid;
+    padding: 10px 20px;
     font-size: 18px;
-    font-family: libre;
-    width: 200px;
-    height: 60px;
-    border-width: 1px;
-    cursor: pointer;
-    box-shadow: inset 0 0 0 0 #6F6C90; 
-    transition: ease-out 0.8s;
-    }
-
-   
-    .button:hover{
-       box-shadow: inset 300px 0 0 0 #6F6C90; 
-        }
-
-
-
-
-
-.button a{
+}
+.button-dark{
+    background-color: rgb(0, 0, 0);
+    border: #E0C18E 3px solid;
+    padding: 10px 20px;
+    font-size: 18px;
     color: white;
-    font-size: 16px;
 }
 
 
 
 
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .herocontainer{
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    .herocontainer img{
-        width: 100%;
-    }
-
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-    .herocontainer{
-        padding-left: 50px;
-        padding-right: 50px;
-        flex-direction: column-reverse;
-        justify-content: center;
-    }
-
-
-
-    .heroleft{
-    width: 100%;
-    display: flex;
-    flex-direction:column ;
-    text-align: center;
-    justify-content: center;
-    }
-
-    .heroleft p{
-        width: 100%;
-    }
-      
-    .m{
-        display: flex;
-    }
-        
-    .heroright{
-    width: 40%;
-    }
-
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-.herocontainer{
-    padding-top: 10% ;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+/* ------------------- Container and Layout Styles ----------------------*/
+.container {
+    padding: 0 1rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: auto;
+}
+
+.half-page { display: flex; flex-direction: column; gap: 1rem; }
+
+
+
+@media (min-width: 650px) {
+    .container { max-width: 1440px; }
+    .parent-of-half-page img { max-width: 100%; }
+    .three-benefits {
+        display: flex;
+        gap: 12%;
+        justify-content: space-between;
     }
 
-    .hero h2{
-        font-size: 35px;
-        font-family: libre;
+    .reverse-parent { flex-direction: row-reverse; }
+
+    .parent-of-half-page {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10%;
+        justify-content: space-between;
+    }
+
+    .half-page{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .half-page-image{
+        align-items: end;
+    }
+
+    .parent-of-half-page{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10%;
+    } 
+
+  
+
+    .reverse-parent{
+        display: flex;
+        flex-direction: row-reverse;
     }
     
-    .hero p{
-        font-size: 20px;
-        font-weight: 100;
-    }
+}
 
-    .hero{
-        position: none;
-        display: flex;
-        justify-content: center;
+@media (min-width: 650px) { 
+    .container { padding: 0 3rem; } }
+@media (min-width: 1200px) { 
+    .container { padding: 0 6rem; } }
+
+.middle-align, .middle {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-align img { vertical-align: middle; }
+
+@media (min-width: 650px) {
+    .middle {
+        flex-direction: row;
+        width: 100%;
+    }
+  
+      .hero{
+          justify-content: space-between;
       }
 
-    .heroleft{
-        width: 100%;
-        column-gap: 0px;
-        padding-right: 0%; 
-        padding-left: 0%; 
-    }
-        
-        .heroleft p{
-            width: 100%;
-        }
-        
-        .heroright{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        }  
-
 }
 
-/* ================Most phones================ */
-@media(max-width:320px) { 
 
-}
+/*--------------------- Universal Styles ------------------------*/
 
-/* ============================================ */
-
-
-
-
-/* ============================================ */
-/*          Feat Section                        */
-/* ============================================ */
-.features{
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.features h3{
-   font-family: libre;
-   font-size: 30px;
-   padding-bottom: 5%;
-}
-
-.featurescontainer{
-    width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-.featureimg{
-    direction: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.featureimg img{
-    padding-left: 50px;
-    padding-right: 50px;
-    width: 30%;
-}
-
-#franks{
-    padding-bottom: 1%;
-}
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-.features h3{
-    font-family: libre;
-    font-size: 30px;
-    padding-bottom: 40px;
-     }
-     
-.featurescontainer{
-    width: 100%;
-    align-items: center;
-    padding-left: 50px;
-    padding-right: 50px;
-    display: flex;
-    flex-direction: column;
-}
-
-.featureimg {
+.image-gallery img, .hero img {
     width: 100%;
 }
-
-.featureimg img{
-    height: auto;
-    width: 30%;
-}
-}
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-.featurescontainer{
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .featurescontainer{
-        width: auto;
-        align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .featureimg img{
-        padding-top: 2%;
-        padding-bottom: 2%;
-        height: auto;
-        width: 100%;
-        
-    }
-
-    .featureimg{
-        direction: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-}
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-
-
-
-
-
-
-
-/* ============================================ */
-/*          Quote                               */
-/* ============================================ */
-.quote{
-    display: flex;
-    justify-content: center;
-}
-
-.quotecontainer{
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    align-items: center;
-}
-
-
-.Mainquote{
-font-size: 50px;
-font-family: libre;
-}
-
-.quoteee{
-    font-size: 24px;
-}
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    
-    .quotecontainer{
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-    
-    
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .quotecontainer{
-        width: 100%; 
-    }
-
+/*--------------------- Hero Section ------------------------*/
+.venetian-bg {
+    background: black url(Images/venetianbg.png);
+    background-size: cover;
    
 }
 
-/* ================Most phones================ */
-@media(max-width:320px) { 
 
-
+.venetian-bg img{
+    border: #E0C18E 6px solid;
 }
 
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    
+.dark-bg img{
+    border: black 6px solid;
+}
+.map img{
+    border: black 6px solid;
+}
+.offer-cover{
+    background-color: #000;
+    background-image: url(Images/offcercover.png);
+    background-size:cover ;
+}
+.dark-bg{
+    background-image: url(Images/darkbg.png);
+    background-size:cover ;
 }
 
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .Mainquote{
-        font-size: 30px;
-        font-family: libre;
-        }
-
-        .quoteee{
-            font-size: 20px;
-        }
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
+.venetian-bg h1, .venetian-bg p,.dark-bg h1, .dark-bg p, .dark-bg h2
+ { color: white; }
 
 
-
-
-
-
-
-/* ============================================ */
-/*          Images Section                      */
-/* ============================================ */
-.Homeimages{
-    position: relative;
-    display: flex;
-    justify-content:center;
-}
-
-.Homeimagescontainer{
-    width: 1440px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-
-.homerealimage{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    justify-content: space-between;
-    height: 100%;
-    cursor: pointer;
-}
-
-.homerealimage img{
-    width: 100%;
-    height: 100%;
-}
-
-
-.buttonimg{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .Homeimagescontainer{
-        width: auto;
-        height: auto;
-        align-items: center;
-        padding-left: 50px;
-        padding-right: 50px;
-        display: flex;
-        flex-direction: row;
+@media (min-width: 600px) {
+    .hero-title, .hero-image, .hero {
         justify-content: space-between;
-     
-    }
-    }
-    /* ================Standard tablet================ */
-    
-    @media(max-width:834px ){     
-    
-    }
-    
-    /* ================Most phones================ */
-    @media(max-width:415px) { 
-        .Homeimagescontainer{
-            width: 100%;
-            padding-left: 20px;
-            padding-right: 20px;
-            flex-direction: column;
-        }
-        .homerealimage{
-            width: 100%;
-            padding-top: 2%;
-            padding-bottom: 2%;
-        }
-
-    }
-    
-    /* ================Most phones================ */
-    @media(max-width:320px) { 
-    
-    }
-    /* ============================================ */
-
-
-
-
-
-/* ============================================ */
-/*         Wideimg                              */
-/* ============================================ */
-
-.wideimg{
-
-background-image: url("images/bo.webp");
-background-repeat:no-repeat;
-background-size:contain;
-background-size: 100%;
-display: flex;
-justify-content: center;
-}
-
-.wideimgcontainer{
-    padding-top: 20%;
-    height: 100%;
-    width: 1440px;
-    padding-bottom: 20%;
-    margin-bottom: 0px;
-}
-
-.quote img{
-    
-    width: 100%
-}
-
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .wideimgcontainer{
-    height: 100%;
-    width: 100%;
-    
-    
-    }
-    
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .wideimgcontainer{
-        height: 100%;
-        width: 100%;
-    
-        
-        }
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-
-
-
-
-
-
-
-
-/* ============================================ */
-/*         Footer                               */
-/* ============================================ */
-
-.footer{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #292929;
-    color: #ffffff;
     }
 
-    
-.footer p{
-    font-size: 15px;
-    color: #ffffff;
-}
-
-.footer img{
-    width: 5px;
-    height: 5%;
-    padding-bottom: 2%;
-}
-
-.footer h3{
-    font-size: 32px;
-    font: libre;
-}
-
-.footercontainer{
-    width: 1440px;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 200px;
-    padding-right: 200px;
-    margin-top: 0px;
-    }
-    
-    .footerleft{
-        display: flex;
-        flex-direction: column;
+    .hero-title, .hero-image {
+        gap: 1rem;
+        width: 40%;
     }
 
-    .footerleft h3{
-        padding-bottom: 2%;
-    }
-
-    .footerleft p{
-        padding-bottom: 2%;
-    }
-
-
-
-    .footerleft h3{
-    font-size: 40px;
-    }
-
-    .footerright{
-        display: flex;
-        flex-direction: row;
-        color: #ffffff;
-        text-decoration: none;
-        gap: 5%;
-        padding-left: 10%;
-    }
-    .footerright p{
-        padding-bottom: 2%;
-    }
-
-    .footer a{ 
-        color: #ffffff;
-        padding-bottom: 2%;
-    }
-
-    .darkbutton{
-        color: #292929;
-        background-color: rgb(255, 255, 255);
-        font-size: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-        width: 200px;
-        height: 60px;
-        border-width: 1px;
-        cursor: pointer;
-        border: none;
-        font-weight: bold;
-        }
-
-        .darkbutton a{
-         display: block;
-         color: #292929;
-        }
-    
-    
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-.footercontainer{
-    width: auto;
-    padding-left: 50px;
-    padding-right: 50px;
-    }
-
-    .footerright{
-        padding-right: 10%;
-    }
-    .footerleft{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-.footerright{
-    flex-direction: column;
-}
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .footer{
-        width: 100%;
-    }
-
-    .footercontainer{
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
-        flex-direction: column;
-        }
-    
-    .footerright{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================ */
-/*         About Head                           */
-/* ============================================ */
-
-.contacthead{
-background-image: url(Images/bg2.jpg);
-background-repeat:no-repeat;
-background-size:contain;
-background-size: 100%;
-display: flex;
-justify-content: center;
-}
-
-.contactheadcontainer{
-padding-top: 15%;
-padding-bottom: 15%;
-display: flex;
-padding-right: 100px;
-padding-left: 100px;
-justify-content: flex-end;
-width: 1440px;
-}
-
-
-.contactheadcontainer h2{
-    color: #ffffff;
-    font-size: 70px;
-    }
-
-.contactheadcontainer img{
-        height:100%;
-        width: 100%;
-        }
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .contactheadcontainer{
-    height: 100%;
-    width: 100%;
-    }
-    .contactheadcontainer{
-        padding-right: 50px;
-        padding-left: 50px;
-        }
-    
-        .contactheadcontainer h2{
-            color: #ffffff;
-            font-size: 50px;
-            }
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .contactheadcontainer{
-        padding-right: 20px;
-        padding-left: 20px;
-        }
-
-        .contactheadcontainer h2{
-            color: #ffffff;
-            font-size: 30px;
-            }
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-
-
-
-
-
-
-
-
-
-/* ============================================ */
-/*        About section                          */
-/* ============================================ */
-.Aboutsection{
-    display: flex;
-    justify-content: center;
-}
-
-.Aboutcontainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 1440px;
-    padding-right:100px;
-    padding-left: 100px;
-    padding-top: 5%;
-}
-
-.Aboutcontainer p{
-    font-size: 18px;
-    font-weight: 100;
-}
-
-.Aboutcontainer h2{
-    font-size: 50px;
-    padding-bottom: 5%;
-}
-
-.aboutholly{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 100%;
-}
-
-.middle{
-    text-align: center;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-.aboutholly1{
-    width: 50%;
-    padding-right:5%;
-}
-
-.aboutholly iframe{
-    width: 45%;
-    height: 60%;
-}
-
-.aboutimg{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-top: 12%;
-    padding-bottom: 12%;
-}
-
-.aboutimg img{
-    width:30%;
-    height: auto;
-}
-
-        
-    
-    
-/* ================large tablet================ */
-    
-@media(max-width:1024px ) {
-    .Aboutcontainer{
-        width: 100%;
-        padding-right:50px;
-        padding-left: 50px;
-    }
-
-    .aboutholly{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }   
-    
-    .aboutholly1{
-        width: 100%;
-        padding-right: 0%;
-    }
-
-    .aboutholly iframe{
-        padding-top: 3%;
-        width: 100%;
-        height: 400px;
-    }
-        
-    }
-    
-/* ================Standard tablet================ */
-    
-@media(max-width:834px ){  
-
-    }
-    
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .Aboutcontainer{
-        padding-right:20px;
-        padding-left: 20px;
-    }
-
-    .middle{
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    .aboutimg{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .aboutimg img{
-        width:100%;
-        height: auto;
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
-
-    .Aboutcontainer h2{
-        font-size: 30px;
-        padding-bottom: 5%;
-    }
-
-    .aboutholly iframe{
-        padding-top: 3%;
-        width: 100%;
-        height: auto;
-    }
-
-
-    }
-    
-/* ================Most phones================ */
-@media(max-width:320px) { 
-    
-    }
-/* ============================================ */
-
-
-
-
-
-
-
-/* ============================================ */
-/*             Gallery                          */
-/* ============================================ */
-
-.gallery{
-    display: flex;
-    justify-content: center;
-}
-
-.gallery h2{
-    font-size: 50px;
-    padding-bottom: 10%;
-}
-
-.gallery h3{
-    font-size: 30px;
-    font-family: libre;
-}
-
-.gallerycontainer{
-    width: 1440px;
-    padding-right: 200px;
-    padding-left: 200px;
-    padding-top: 5%; 
-    padding-bottom: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-
-
-.gallerycollection{
-    display: flex;
-    flex-direction: column;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    justify-content: center;
-}
-
-.galleryimages{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-
-
-.columnrow{
-    display: flex;
-    flex-direction: row;
-    padding-top: 2%;
-    padding-bottom: 2% ;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.columnrow img{
-border: #1A1315;
-border-style: solid;
-border-width: 1px;
-width: 30%;
-cursor: pointer;
-}
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .gallerycontainer{
-        width: 100%;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-        
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-
-    .gallery h2{
-        font-size: 30px;
-        padding-bottom: 10%;
-    }
-    
-    .gallery h3{
-        font-size: 20px;
-        font-family: libre;
-    }
-
-    .gallerycontainer{
-        width: 100%;
-        padding-right: 20px;
-        padding-left: 20px;
-        
-    }
-
-    .columnrow img{
-        margin-top: 4% ;
-        margin-bottom: 4%;
-        width: 100%;
-        }
-     
-    .columnrow{
-        flex-direction: column;
-        }    
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-
-
-
-
-
-
-
-
-
-
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  
-  /* Style the submit button with a specific background color etc */
-  input[type=submit] {
-    color: rgb(255, 255, 255);
-    background-color: #292929;
-    font-size: 18px;
-    font-family: libre;
-    width: 200px;
-    height: 60px;
-    border-width: 1px;
-    cursor: pointer;
-  }
-  
-  /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
-    background-color: #292929;
-  }
-  
-  /* Add a background color and some padding around the form */
-  .maincontact {
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .maincontainer{
-    padding-right: 100px;
-    padding-left: 100px;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
-
-  .name{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .personname{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 2%;
-  }
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-    .maincontainer{
-        padding-right: 50px;
-        padding-left: 50px;
+    .hero-image {
         width: 60%;
-      }
-}
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-    .maincontainer{
-        padding-right: 50px;
-        padding-left: 50px;
-        width: 1000%;
-      }
-}
-
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .personname{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 0%;
-      }
-
-      .maincontainer{
-        padding-right: 20px;
-        padding-left: 20px;
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}}
-/* ============================================ */
-
-
-
-
-
-
-
-
-/* ============================================ */
-/*             Modal images                          */
-/* ============================================ */
-
-
-
-/* Style the Image Used to Trigger the Modal */
-#myImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  #myImg:hover {opacity: 0.7;}
-  
-  /* The Modal (background) */
-  .modal {
-    display: none;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  
-  /* Modal Content (Image) */
-  .modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-  }
-  
-  /* Caption of Modal Image (Image Text) - Same Width as the Image */
-  #caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-  }
-  
-  /* Add Animation - Zoom in the Modal */
-  .modal-content, #caption { 
-    animation-name: zoom;
-    animation-duration: 0.6s;
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  /* The Close Button */
-  .close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
-    .modal-content {
-      width: 100%;
     }
-  }
-
-
-
-
-
-
-/* ============================================ */
-/*             Lightbox                         */
-/* ============================================ */
-
-#lightbox{
-    position: fixed;
-    z-index: 10000;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    display: none;
 }
 
-#lightbox.active {
+.cell img{
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    gap: 10px;
+}
+
+
+@media (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1fr);
+    }
+
+    .offer{
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1fr);
+    }
+}
+
+.imagegrid-container {
+    display: grid;
+    grid-template-rows: repeat(1fr);
+    gap: 2rem;
+}
+
+
+@media (min-width: 1200px) {
+    .imagegrid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1fr);
+    }
+}
+
+/*-----------------End of Why Us Section ---------------------*/
+
+/* Contact*/
+
+form{
+   
+    color: #4B4B4B;
+}
+
+  /* Input and textarea styles */
+  input,
+  textarea {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    background: white;
+    height: 48px;
+  }
+
+.email-form{
+    gap: 16px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+  }
+
+footer{
+    background-color: #616161;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
-#lightbox img {
-height: 70%;
-width: auto;
-}
-
-
-/* ================large tablet================ */
-
-@media(max-width:1024px ) {
-   
-    }
-        
-
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
+.flex-row img{
+    max-width: 150px;
 
 }
 
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    #lightbox img {
-        max-width: 300px;
-        }
-}
-
-/* ================Most phones================ */
-@media(max-width:320px) { 
-
-}
-/* ============================================ */
-
-
-
-
-
-/* ============================================ */
-/*            reviews                       */
-/* ============================================ */
-
-/* Slideshow container */
-.slideshow-container {
-    position: relative;
-    background: #ffffffff;
-    padding-top: 10%;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  
-  /* Slides */
-  .mySlides {
-    display: none;
-    padding: 40px;
-    text-align: center;
-  }
-  
-  /* Next & previous buttons */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -30px;
-    padding: 16px;
-    color: #888;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  /* Position the "next button" to the right */
-  .next {
-    position: absolute;
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+footer p, footer a, footer h3 {
     color: white;
-  }
-  
-  /* The dot/bullet/indicator container */
-  .dot-container {
-    text-align: center;
-    padding: 20px;
-    background: rgb(255, 255, 255);
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  /* Add a background color to the active dot/circle */
-  .active, .dot:hover {
-    background-color: #1b1717;
-  }
-  
-  /* Add an italic font style to all quotes */
-  q {font-style: italic;}
-  
-  /* Add a blue color to the author */
-  .author {color: #292929; font-size: 24px; font-weight: bold ;}
+}
 
-  /* ================large tablet================ */
 
-@media(max-width:1024px ) {
-    .slideshow-container {
-        padding-left: 50px;
-        padding-right: 50px;
+footer p:hover,
+footer a:hover
+{
+    color: grey;
+    animation: fadeIn 2s ease-in-out ;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.gallery-grid .image-wrapper {
+    padding: 10px; /* Adjust this value for desired padding */
+    display: flex;
+    aspect-ratio: 1 / 1; 
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid #000;
+    height: 100%; /* Ensure the wrapper fills the entire grid cell */
+}
+
+.gallery-grid img {
+    height: 80%;
+ 
+    object-fit: cover; /* This ensures the image covers the entire space without distortion */
+}
+
+  @media (min-width:1025px){
+    .namebox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px;
       }
-}
-    
-
-
-/* ================Standard tablet================ */
-
-@media(max-width:834px ){     
-    
-
-}
-
-/* ================Most phones================ */
-@media(max-width:415px) { 
-    .slideshow-container {
-        padding-left: 16px;
-        padding-right: 16px;
+  
+      .name-box{
+        width: 48%;
       }
-}
 
-/* ================Most phones================ */
-@media(max-width:320px) { 
+      .name-group{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+  }
 
-}
-/* ============================================ */
-  /* ============================================ */
+  @media (min-width:600px){
+    .footer-nav{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    #bottom-nav{
+        align-items: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+  }
+
