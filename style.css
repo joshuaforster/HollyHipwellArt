@@ -17,9 +17,6 @@ body {
    
 }
 
-header{
-    background-color: #F7F4F0;
-}
 
 
 
@@ -275,7 +272,7 @@ nav {
     gap: 2rem;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
     .container { max-width: 1440px; }
     .parent-of-half-page img { max-width: 100%; }
     .three-benefits {
@@ -349,8 +346,6 @@ nav {
 .half-page-image img{
     border: 2px solid black;
 }
-
-
 
 @media (min-width: 600px) {
     .hero-title, .hero-image, .hero {
