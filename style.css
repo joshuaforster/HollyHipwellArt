@@ -697,3 +697,21 @@ img[src="Images/rightarrow.png"] {
 
 
 /* Contact*/
+
+.maintenance {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255); /* Semi-transparent black */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    display: flex; /* Use flexbox to center content */
+    z-index: 10000000000;
+}
+
+.maintenance > h1{
+    color: #000;
+}
