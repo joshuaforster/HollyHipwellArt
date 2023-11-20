@@ -1,26 +1,31 @@
+import { imageData } from "./imagedata.js";
 
+// Function to render a specific gallery
+function renderGallery(galleryName, targetElementId) {
+    const targetGallery = document.getElementById(targetElementId);
 
-function renderGallery(){
-    const galleryImages = [
-        "Images/IMG_0614.png",
-        "Images/IMG_0615.png",
-        "Images/IMG_0620.png",
-        "Images/IMG_0617.png",
-        "Images/IMG_0618.png",
-        "Images/IMG_0616.png",
-    ] 
+    const galleryHTML = imageData
+        .filter(image => image.ImageGallery === galleryName)
+        .map(image => `<img class="enlarge" src="${image.src}" alt="Image from ${galleryName}">`)
+        .join('');
 
-    const imageGallery = document.getElementById('image-gallery')
+    targetGallery.innerHTML = galleryHTML;
 
-    const insertedGallery = galleryImages.forEach(function(image){
-        return imageGallery.innerHTML += `<img src=${image}>`
-    })
+    targetGallery.addEventListener('click', function(event) {
+        if (event.target.classList.contains('enlarge')) {
+            const clickedImageSrc = event.target.src; // Get the source of the clicked image
+            document.querySelectorAll('.black').forEach(function(x) {
+                x.style.display = 'flex'; // Use flex to center the image
+                x.innerHTML = `<img src="${clickedImageSrc}" alt="Enlarged image">`; // Set the inner HTML with the correct image source
+            });
+        }
+    });
+
     
+
 }
 
+// Call the function for different galleries
+renderGallery('Swedish project', 'sweden-gallery');
 
-renderGallery()
-
-
-
-
+renderGallery('Spanish project', 'spain-gallery');

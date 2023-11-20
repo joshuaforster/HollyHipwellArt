@@ -21,15 +21,7 @@ body {
 
 
 
-@font-face {
-    font-family: hello;
-    src: url(Fonts/optima-cufonfonts/OPTIMA.TTF);
-}
 
-@font-face {
-    font-family: avenir;
-    src: url(Fonts/avenir/AvenirNextLTPro-Regular.otf);
-}
 
 
 h1, h2, h3, h4, li {
@@ -669,5 +661,39 @@ img[src="Images/leftarrow.png"] {
 img[src="Images/rightarrow.png"] {
     right: 1rem;
 }
+
+.black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    display: none; /* Use flexbox to center content */
+    z-index: 10000000000;
+}
+
+.black img {
+    width: 80vh; /* Maximum width of the image */
+    height: 80vh; /* Maximum height of the image */
+    margin: auto; /* Center the image */
+    z-index: 10000000000;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index:40000000001 ;
+    
+}
+
 
 /* Contact*/
