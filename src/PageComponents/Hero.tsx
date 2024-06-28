@@ -25,7 +25,7 @@ export default function Hero() {
             style={{ maxHeight: '75vh' }}
           />
         </div>                
-      </div>
+      </div>x
     </section>
   );
 }

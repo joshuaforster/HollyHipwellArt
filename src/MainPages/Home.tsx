@@ -65,17 +65,6 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white dark:bg-dark-gray py-16">
-                <div className="text-center mx-auto max-w-screen-xl px-4 justify-center items-center">
-                    <p className="lg:text-5xl text-4xl italic text-gray-900 dark:text-white leading-loose lg:leading-loose">
-                        “Enjoy the little things, for one day you may look back and realize they were the big things.”
-                    </p>
-                    <p className="text-lg text-gray-600 dark:text-gray-400 mt-2">
-                        – Robert Brault
-                    </p>
-                </div>
-            </section>
-
             <TestimonialSlider />
         </section>
     );
