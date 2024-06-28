@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { useTheme } from '../CustomComponents/darkmode';
 
 export default function Header() {
   const navigationLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' }
+    { name: 'Home', path: '#hero' },
+    { name: 'About', path: '#about' },
+    { name: 'Portfolio', path: '#portfolio' },
+    { name: 'Contact', path: '#contact' }
   ];
 
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { pathname } = useLocation(); // Get the current path
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -20,18 +19,21 @@ export default function Header() {
 
   const { theme, toggleTheme } = useTheme();
 
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
+  const handleLinkClick = (path:any) => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/' + path;
+    } else {
+      setMobileMenuOpen(false);
+    }
   };
-
   return (
     <header className="sticky top-0 bg-white shadow-lg z-50 dark:bg-neutral-800">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-neutral-800">
         <div className="flex items-center justify-between mx-auto max-w-screen-xl">
-          <Link to="/" className="flex items-center" onClick={handleLinkClick}>
+          <Link to="/" className="flex items-center" onClick={() => handleLinkClick('#hero')}>
             <img
-              src={theme === 'dark' ? '/images/HollyHipwelldark.png' : '/images/HollyHipwell.png'}
-              className="h-6 sm:h-6"
+              src={theme === 'dark' ? '/images/LukeLogoDark.png' : '/images/LukeLogo.webp'}
+              className="h-16 sm:h-16"
               alt="Company Logo"
             />
           </Link>
@@ -39,18 +41,13 @@ export default function Header() {
             <ul className="flex items-center space-x-8">
               {navigationLinks.map((link, index) => (
                 <li key={index}>
-                  <Link
-                    to={link.path}
-                    className={`block py-2 pr-4 pl-3 ${
-                      pathname === link.path
-                        ? 'text-[#2EA8E0]'
-                        : 'text-gray-700 dark:text-white'
-                    } hover:bg-gray-200 dark:hover:bg-gray-200 dark:hover:text-black rounded-lg`}
-                    aria-current={link.path === pathname ? 'page' : undefined}
-                    onClick={handleLinkClick}
+                  <a
+                    href={link.path}
+                    className="block py-2 pr-4 pl-3 text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-200 dark:hover:text-black rounded-lg"
+                    onClick={() => handleLinkClick(link.path)}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -80,7 +77,6 @@ export default function Header() {
                 </svg>
               )}
             </button>
-            {/* Dark mode toggle for mobile view */}
             <button
               onClick={toggleTheme}
               className="ml-2 p-2 text-gray-800 bg-gray-200 rounded dark:text-white dark:bg-gray-700"
@@ -89,22 +85,18 @@ export default function Header() {
             </button>
           </div>
         </div>
-        {/* Mobile menu dropdown */}
         {isMobileMenuOpen && (
           <div className="lg:hidden">
             <ul className="flex flex-col mt-4 space-y-2">
               {navigationLinks.map((link, index) => (
                 <li key={index}>
-                  <Link
-                    to={link.path}
-                    className={`block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:border-gray-700 ${
-                      pathname === link.path ? 'text-[#2EA8E0]' : ''
-                    } hover:bg-gray-200 dark:hover:bg-dark-gray rounded-lg`}
-                    aria-current={link.path === pathname ? 'page' : undefined}
-                    onClick={handleLinkClick}
+                  <a
+                    href={link.path}
+                    className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 dark:text-white dark:hover:bg-gray-700 dark:border-gray-700"
+                    onClick={() => handleLinkClick(link.path)}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

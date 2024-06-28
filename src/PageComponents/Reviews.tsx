@@ -27,7 +27,7 @@ const reviewsData = [
 
 const TestimonialSlider: React.FC = () => {
   return (
-    <div className="py-16 mx-auto bg-gray-50  dark:bg-dark-gray">
+    <div className="py-16 mx-auto bg-gray-100  dark:bg-#0C0500">
       <div className='container mx-auto'>
         <h2 className="text-3xl font-bold text-center mb-8 dark:text-white">Testimonials</h2>
         <p className="text-center mb-8 text-gray-600 dark:text-gray-300">
@@ -46,7 +46,7 @@ const TestimonialSlider: React.FC = () => {
           {reviewsData.map((review) => (
             <SwiperSlide key={review.id}>
               <div className="p-4 text-center">
-                <div className="bg-white dark:bg-neutral-800 p-6 rounded-lg mb-8 shadow-lg w-full lg:w-3/4 mx-auto">
+                <div className="bg-#F4E1CF dark:bg-neutral-800 p-6 rounded-lg mb-8 shadow-lg w-full lg:w-3/4 mx-auto">
                   <p className="text-gray-800 dark:text-white mb-4">{review.review}</p>
                   <div className="flex flex-col items-center">
                     <div>
