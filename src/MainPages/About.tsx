@@ -21,13 +21,13 @@ export default function About() {
                                 Holly always tries to capture the viewer's attention and imagination through her work. Her art blends intricate drawings with vibrant watercolours, creating captivating pieces that stand out.
                             </p>
                             <div className="flex mt-4">
-                                <img className='w-full max-w-screen-md' alt="Abstract artwork by Holly" src='images/bg2.jpg'/>
+                                <img className='w-full max-w-screen-md' alt="Abstract artwork by Holly" src='images/holly.png'/>
                             </div>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
                             <div className="w-full h-[300px] overflow-hidden relative">
                                 <img
-                                    src="images/holly2.png"
+                                    src="images/bo.png"
                                     alt="Holly working on her art"
                                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 object-cover w-full h-full"
                                 />
