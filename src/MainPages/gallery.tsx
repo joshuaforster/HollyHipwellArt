@@ -57,18 +57,18 @@ export default function Gallery() {
         </div>
       </div>
 
-      <div className="bg-light-gray dark:bg-dark-gray py-8">
-        <div className="flex justify-center items-center h-full">
-          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Animals</h2>
-        </div>
-        <ImageGallery items={animals} />
-      </div>
-
       <div className="bg-white dark:bg-dark-gray py-8">
         <div className="flex justify-center items-center h-full">
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Abstract</h2>
         </div>
         <ImageGallery items={abstract} />
+      </div>
+
+      <div className="bg-light-gray dark:bg-dark-gray py-8">
+        <div className="flex justify-center items-center h-full">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Animals</h2>
+        </div>
+        <ImageGallery items={animals} />
       </div>
 
       <div className="bg-light-gray dark:bg-dark-gray py-8">

@@ -35,7 +35,7 @@ export default function ImageGallery({ items, category }: ImageGalleryProps) {
           {filteredItems.map((item, index) => (
             <div
               key={index}
-              className="relative w-full h-60 overflow-hidden border border-black dark:border-white cursor-pointer"
+              className="relative w-full h-100 overflow-hidden border border-black dark:border-white cursor-pointer"
               onClick={() => setCurrentIndex(index)}
             >
               <div className="w-full h-full">
@@ -64,4 +64,3 @@ export default function ImageGallery({ items, category }: ImageGalleryProps) {
     </section>
   );
 }
-
