@@ -1,35 +1,51 @@
+// src/pages/Gallery.tsx
 import React, { useEffect, useState } from 'react';
 import ImageGallery from '../PageComponents/imagegallery';
-import client from '../contentfulClient';
-
-type GalleryItem = {
-  type: 'image';
-  imageUrl: string;
-  category: string;
-};
+import contentfulClient from '../contentfulClient';
+import { GalleryItem } from '../CustomComponents/types';
 
 export default function Gallery() {
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchGalleryItems = async () => {
       try {
-        const response = await client.getEntries({
+        const response = await contentfulClient.getEntries({
           content_type: 'galleryItem',
         });
-        const items: GalleryItem[] = response.items.map((item: any) => ({
-          type: 'image' as const,
-          imageUrl: item.fields.imageUrl.fields.file.url,
-          category: item.fields.category.toLowerCase(),
-        }));
-        setGalleryItems(items);
+
+        const items = await Promise.all(
+          response.items.map(async (item: any) => {
+            const imageUrl = item.fields.imageUrl?.fields?.file?.url;
+
+            if (!imageUrl) {
+              console.error('Image URL is undefined for item', item);
+              return null;
+            }
+
+            return {
+              type: 'image' as const,
+              title: item.fields.title,
+              imageUrl: `https:${imageUrl}`,
+              altText: item.fields.altText,
+              category: item.fields.category,
+            };
+          })
+        );
+
+        const validItems = items.filter(item => item !== null) as GalleryItem[];
+        setGalleryItems(validItems);
       } catch (error) {
         console.error('Error fetching gallery items:', error);
       }
     };
 
-    fetchData();
+    fetchGalleryItems();
   }, []);
+
+  const animals = galleryItems.filter(item => item.category === 'Animal');
+  const abstract = galleryItems.filter(item => item.category === 'Abstract');
+  const figures = galleryItems.filter(item => item.category === 'Figure');
 
   return (
     <section className="bg-white dark:bg-dark-gray">
@@ -41,30 +57,26 @@ export default function Gallery() {
         </div>
       </div>
 
-      {galleryItems.length > 0 && (
-        <>
-          <div className="bg-light-gray dark:bg-dark-gray py-8">
-            <div className="flex justify-center items-center h-full">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Animals</h2>
-            </div>
-            <ImageGallery items={galleryItems.filter(item => item.category === 'animal')} category={'animal'} />
-          </div>
+      <div className="bg-light-gray dark:bg-dark-gray py-8">
+        <div className="flex justify-center items-center h-full">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Animals</h2>
+        </div>
+        <ImageGallery items={animals} />
+      </div>
 
-          <div className="bg-white dark:bg-dark-gray py-8">
-            <div className="flex justify-center items-center h-full">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Abstract</h2>
-            </div>
-            <ImageGallery items={galleryItems.filter(item => item.category === 'abstract')} category={'abstract'} />
-          </div>
+      <div className="bg-white dark:bg-dark-gray py-8">
+        <div className="flex justify-center items-center h-full">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Abstract</h2>
+        </div>
+        <ImageGallery items={abstract} />
+      </div>
 
-          <div className="bg-light-gray dark:bg-dark-gray py-8">
-            <div className="flex justify-center items-center h-full">
-              <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Figures</h2>
-            </div>
-            <ImageGallery items={galleryItems.filter(item => item.category === 'figure')} category={'figure'} />
-          </div>
-        </>
-      )}
+      <div className="bg-light-gray dark:bg-dark-gray py-8">
+        <div className="flex justify-center items-center h-full">
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">Figures</h2>
+        </div>
+        <ImageGallery items={figures} />
+      </div>
     </section>
   );
 }

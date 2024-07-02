@@ -1,77 +1,43 @@
-
-import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import ReactBeforeSliderComponent from 'react-before-after-slider-component';
-import 'react-before-after-slider-component/dist/build.css';
-
-interface ImageType {
-    imageUrl: string;
-}
+// src/CustomComponents/sliderImages.tsx
+import React from 'react';
 
 interface SliderProps {
-    firstImage: ImageType;
-    secondImage: ImageType;
-    onPrevious: () => void;
-    onNext: () => void;
-    isFullscreen: boolean;
-    setIsFullscreen: (value: boolean) => void;
+  firstImage: { imageUrl: string };
+  secondImage: { imageUrl: string };
+  onPrevious: () => void;
+  onNext: () => void;
+  isFullscreen: boolean;
+  setIsFullscreen: (value: boolean) => void;
 }
 
-export default function Slider({ firstImage, secondImage, onPrevious, onNext, isFullscreen, setIsFullscreen }: SliderProps) {
-    const openFullscreen = () => {
-        setIsFullscreen(true);
-    };
-
-    const closeFullscreen = () => {
-        setIsFullscreen(false);
-    };
-
-    return (
-        <div>
-            <div
-                className="relative w-full h-full overflow-hidden cursor-pointer transition-transform duration-300 transform hover:scale-105"
-                onClick={openFullscreen}
-            >
-                <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-opacity duration-300"></div>
-                <ReactBeforeSliderComponent
-                    firstImage={firstImage}
-                    secondImage={secondImage}
-                />
-            </div>
-
-            {isFullscreen && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-                    onClick={closeFullscreen}
-                >
-                    <button
-                        className="absolute top-4 right-4 text-white text-3xl z-50"
-                        onClick={(e) => { e.stopPropagation(); closeFullscreen(); }}
-                    >
-                        <FaTimes />
-                    </button>
-                    <button
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-50"
-                        onClick={(e) => { e.stopPropagation(); onPrevious(); }}
-                    >
-                        <FaArrowLeft />
-                    </button>
-                    <button
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl z-50"
-                        onClick={(e) => { e.stopPropagation(); onNext(); }}
-                    >
-                        <FaArrowRight />
-                    </button>
-                    <div
-                        className="relative w-4/5 h-4/5"
-                        onClick={(e) => e.stopPropagation()} // Prevents closing when clicking on the image
-                    >
-                        <ReactBeforeSliderComponent
-                            firstImage={firstImage}
-                            secondImage={secondImage}
-                        />
-                    </div>
-                </div>
-            )}
+const Slider: React.FC<SliderProps> = ({
+  firstImage,
+  secondImage,
+  onPrevious,
+  onNext,
+  isFullscreen,
+  setIsFullscreen,
+}) => {
+  return (
+    <div className="relative">
+      <img
+        src={firstImage.imageUrl}
+        alt=""
+        className={`w-full h-full object-cover ${isFullscreen ? 'fixed inset-0 z-50' : ''}`}
+        onClick={() => setIsFullscreen(!isFullscreen)}
+      />
+      {isFullscreen && (
+        <div className="absolute inset-0 flex items-center justify-between p-4">
+          <button onClick={onPrevious} className="bg-white rounded-full p-2">
+            Prev
+          </button>
+          <button onClick={onNext} className="bg-white rounded-full p-2">
+            Next
+          </button>
         </div>
-    );
-}
+      )}
+    </div>
+  );
+};
+
+export default Slider;

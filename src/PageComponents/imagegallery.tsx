@@ -1,78 +1,67 @@
-// src/PageComponents/ImageGallery.tsx
 import React, { useState } from 'react';
-import Slider from '../CustomComponents/sliderImages';
+import { GalleryItem } from '../CustomComponents/types';
 import SingleImage from '../CustomComponents/singleImage';
 
-interface ImageItem {
-    type: 'image';
-    imageUrl: string;
-    category?: string;
-}
-
-interface SliderItem {
-    type: 'slider';
-    firstImage: string;
-    secondImage: string;
-    category?: string;
-}
-
-type GalleryItem = ImageItem | SliderItem;
-
 interface ImageGalleryProps {
-    items: GalleryItem[];
-    category?: string; // Add category prop
+  items: GalleryItem[];
+  category?: string;
 }
 
 export default function ImageGallery({ items, category }: ImageGalleryProps) {
-    const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-    // Filter items based on the category prop
-    const filteredItems = category ? items.filter(item => item.category === category) : items;
+  const filteredItems = category ? items.filter(item => item.category === category) : items;
 
-    const handlePrevious = () => {
-        if (currentIndex !== null) {
-            setCurrentIndex((currentIndex - 1 + filteredItems.length) % filteredItems.length);
-        }
-    };
+  const handlePrevious = () => {
+    if (currentIndex !== null) {
+      setCurrentIndex((currentIndex - 1 + filteredItems.length) % filteredItems.length);
+    }
+  };
 
-    const handleNext = () => {
-        if (currentIndex !== null) {
-            setCurrentIndex((currentIndex + 1) % filteredItems.length);
-        }
-    };
+  const handleNext = () => {
+    if (currentIndex !== null) {
+      setCurrentIndex((currentIndex + 1) % filteredItems.length);
+    }
+  };
 
-    return (
-        <section className="bg-white dark:bg-dark-gray">
-            <div className="px-4 py-8 mx-auto max-w-screen-xl lg:px-6 lg:py-16">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {filteredItems.map((item, index) => (
-                        <div key={index} className="relative h-full w-auto overflow-hidden">
-                            {item.type === 'image' ? (
-                                <div className="w-full h-full">
-                                    <SingleImage
-                                        imageUrl={item.imageUrl}
-                                        onPrevious={handlePrevious}
-                                        onNext={handleNext}
-                                        isFullscreen={currentIndex === index}
-                                        setIsFullscreen={(value) => setCurrentIndex(value ? index : null)}
-                                    />
-                                </div>
-                            ) : (
-                                <div className="w-full h-full">
-                                    <Slider
-                                        firstImage={{ imageUrl: item.firstImage }}
-                                        secondImage={{ imageUrl: item.secondImage }}
-                                        onPrevious={handlePrevious}
-                                        onNext={handleNext}
-                                        isFullscreen={currentIndex === index}
-                                        setIsFullscreen={(value) => setCurrentIndex(value ? index : null)}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                </div>
+  const closeFullscreen = () => {
+    setCurrentIndex(null);
+  };
+
+  return (
+    <section className="bg-white dark:bg-dark-gray">
+      <div className="px-4 py-8 mx-auto max-w-screen-xl lg:px-6 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {filteredItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative w-full h-60 overflow-hidden border border-black dark:border-white cursor-pointer"
+              onClick={() => setCurrentIndex(index)}
+            >
+              <div className="w-full h-full">
+                <img
+                  src={item.imageUrl}
+                  alt={item.altText}
+                  className="w-full h-full object-cover"
+                />
+                <h3 className="mt-2 text-xl font-semibold text-gray-800 dark:text-white">{item.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{item.category}</p>
+              </div>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+      {currentIndex !== null && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+          <SingleImage
+            imageUrl={filteredItems[currentIndex].imageUrl}
+            onPrevious={handlePrevious}
+            onNext={handleNext}
+            onClose={closeFullscreen}
+          />
+        </div>
+      )}
+    </section>
+  );
 }
+

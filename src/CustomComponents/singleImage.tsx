@@ -1,59 +1,58 @@
-import { FaTimes, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import React from 'react';
 
 interface SingleImageProps {
-    imageUrl: string;
-    onPrevious: () => void;
-    onNext: () => void;
-    isFullscreen: boolean;
-    setIsFullscreen: (value: boolean) => void;
+  imageUrl: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  onClose: () => void;
 }
 
-export default function SingleImage({ imageUrl, onPrevious, onNext, isFullscreen, setIsFullscreen }: SingleImageProps) {
-    const openFullscreen = () => {
-        setIsFullscreen(true);
-    };
+const SingleImage: React.FC<SingleImageProps> = ({
+  imageUrl,
+  onPrevious,
+  onNext,
+  onClose,
+}) => {
+  const handleClickOutside = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
 
-    const closeFullscreen = () => {
-        setIsFullscreen(false);
-    };
+  return (
+    <div className="relative w-full h-full flex items-center justify-center" onClick={handleClickOutside}>
+      <img
+        src={imageUrl}
+        alt=""
+        className="w-4/5 h-4/5 object-contain cursor-pointer"
+        onClick={(e) => e.stopPropagation()}
+      />
+      <button
+        className="absolute top-5 right-5 text-white text-3xl"
+        onClick={onClose}
+      >
+        &times;
+      </button>
+      <button
+        className="absolute left-5 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-2xl p-2 rounded-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrevious();
+        }}
+      >
+        &#9664;
+      </button>
+      <button
+        className="absolute right-5 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-2xl p-2 rounded-full"
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+      >
+        &#9654;
+      </button>
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <img
-                src={imageUrl}
-                alt="placeholder"
-                className="object-cover w-full h-full cursor-pointer hover:opacity-90 border-4 border-black dark:border-white"
-                onClick={openFullscreen}
-            />
-
-            {isFullscreen && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-                    onClick={closeFullscreen}
-                >
-                    <div className="absolute top-4 right-4 text-white text-3xl">
-                        <FaTimes onClick={closeFullscreen} className="cursor-pointer" />
-                    </div>
-                    <div
-                        className="absolute left-4 text-white text-3xl"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <FaArrowLeft onClick={onPrevious} className="cursor-pointer" />
-                    </div>
-                    <div
-                        className="absolute right-4 text-white text-3xl"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <FaArrowRight onClick={onNext} className="cursor-pointer" />
-                    </div>
-                    <img
-                        src={imageUrl}
-                        alt="placeholder"
-                        className="max-h-full object-contain border-4 border-black dark:border-white"
-                        onClick={(e) => e.stopPropagation()} // Prevents closing when clicking on the image
-                    />
-                </div>
-            )}
-        </div>
-    );
-}
+export default SingleImage;
